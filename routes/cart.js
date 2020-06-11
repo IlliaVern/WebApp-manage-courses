@@ -22,6 +22,7 @@ router.post('/add', async (req, res) => {
     res.redirect('/cart')
 })
 
+
 router.get('/', async (req, res) => {
     const user = await req.user
         .populate('cart.items.courseId')
