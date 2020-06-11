@@ -13,10 +13,7 @@ const course = new Schema({
         max: 10000,
         min: 1
     },
-    img: {
-        type: String,
-        required: true
-    }
+    img: String
 })
 
 module.exports = model('Course', course)
