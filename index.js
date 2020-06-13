@@ -14,6 +14,7 @@ const cartRoutes = require('./routes/cart')
 const authRoutes = require('./routes/auth')
 // const User = require('./models/user')
 const varMiddleware = require('./middleware/variables')
+const userMiddleware = require('./middleware/user')
 
 const MONGODB_URI = process.env.MONGODB_URI
 const app = express()
@@ -42,6 +43,7 @@ app.use(session({
     store: store
 }))
 app.use(varMiddleware)
+app.use(userMiddleware)
 
 app.use('/', homeRoutes)
 app.use('/add', addRoutes)
