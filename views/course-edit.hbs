@@ -28,12 +28,14 @@
         <input class="file-path validate" type="text">
       </div>
     </div> --}}
+    <input type="hidden" name="_csrf" value="{{csrf}}">
     <input type="hidden" name="id" value="{{course._id}}">
 
     <button type="submit" class="btn waves-effect btn-primary">Edit course</button>
 </form>
 
 <form action="/courses/remove" method="POST">
-  <input type="hidden" name="id" value="{{course._id}}">
-  <button type="submit" class="btn waves-effect red">Delete course</button>
+    <input type="hidden" name="_csrf" value="{{csrf}}">
+    <input type="hidden" name="id" value="{{course._id}}">
+    <button type="submit" class="btn waves-effect red">Delete course</button>
 </form>
