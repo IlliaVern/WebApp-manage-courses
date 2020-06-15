@@ -38,7 +38,7 @@ app.set('views', 'views') // явно указываем папку с шабл�
 app.use(express.static(path.join(__dirname, 'public')))
 app.use(express.urlencoded({extended: true}))
 app.use(session({
-    secret: 'my secret value',
+    secret: process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: false,
     store: store
